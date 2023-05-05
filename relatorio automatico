@@ -1,3 +1,8 @@
+# Em vez de entrar no SQL e verificar se um determinado usuário possui acesso a um determinado recurso de agenda do App
+# Esse script lê o relatório em PDF do SQL e te pergunta qual usuário você gostaria de consultar
+# Logo após ele te informa se determinado usuário possui acesso somente a agenda ou não
+
+
 
 import pyttsx3, PyPDF2
 
