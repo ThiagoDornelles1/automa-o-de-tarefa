@@ -1,0 +1,23 @@
+
+import pyttsx3, PyPDF2
+
+
+pdfreader = PyPDF2.PdfReader(open('usuarios.pdf', 'rb'))
+speaker = pyttsx3.init()
+
+for page_num in range (len(pdfreader.pages)):
+    text = pdfreader.pages[page_num].extract_text()
+    clean_text = text.strip().replace('\n', ' ')
+    print(clean_text)
+
+# Verificar se o usuário está com acesso somente a agenda
+
+while True:
+    usuario = input('Digite o usuário: ')
+    base = clean_text
+
+    if usuario in base:
+        print(f'O usuário {usuario} está com acesso somente a agenda')
+    else:
+        print(f'Não possui acesso a AGENDA')
+
